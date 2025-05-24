@@ -2,11 +2,22 @@
 
 [[ $- != *i* ]] && return
 
-rmmod pcspkr 2>/dev/null # nix beep
+bind -f ~/.inputrc
 
 PS1="\w > # "
 
+
+d() {
+  local dst="$(command vifm --choose-dir - "$@")"
+  if [ -z "$dst" ]; then
+    echo 'Directory picking cancelled/failed'
+    return 1
+  fi
+  cd "$dst"
+}
+
 alias gs="git status"
+alias ll="ls -la"
 
 # bash_d="${XDG_CONFIG_HOME}"/bash.d
 #if [ -d "${bash_d}" ]; then
@@ -15,7 +26,6 @@ alias gs="git status"
 #  done
 #fi
 #
-#alias ll="ls -la"
 #
 #. ~/.env
 # . ~/.alias
