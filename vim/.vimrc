@@ -20,6 +20,8 @@ set tabstop=2
 set number
 set relativenumber
 
+set hlsearch
+set incsearch
 set foldmethod=syntax
 
 set t_Co=256
