@@ -1,11 +1,22 @@
-#— .bashrc
+# ~/.bashrc
+
+# TODO Add colors and LC_COLORS
 
 [[ $- != *i* ]] && return
 
-bind -f ~/.inputrc
+[ -f ~/.alias ] && . ~/.alias
 
-PS1="\w > # "
+if [ -f ~/.inputrc ]; then
+	bind -f ~/.inputrc
+else
+# TODO Add vi-bindings for bash
+	set -o vi
+fi
 
+
+ent() {
+  find $1 | entr $1
+}
 
 d() {
   local dst="$(command vifm --choose-dir - "$@")"
@@ -16,8 +27,16 @@ d() {
   cd "$dst"
 }
 
-alias gs="git status"
-alias ll="ls -la"
+PS1="\w > "
+
+
+
+# alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
+# alias show_options='shopt'                  # Show_options: display bash options settings
+# alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
+# alias fix_term='echo -e "\033c"'            # fix_term:     Reset the conosle.  Similar to the reset command
+# alias cic='bind "set completion-ignore-case on"' # cic:          Make tab-completion case-insensitive
+# alias src='source ~/.bashrc'                # src:          Reload .bashrc file
 
 # bash_d="${XDG_CONFIG_HOME}"/bash.d
 #if [ -d "${bash_d}" ]; then
@@ -69,3 +88,4 @@ alias ll="ls -la"
 # 	fi
 # 	cd "$dst"
 # }
+PATH="$PATH:/home/zfen/bin"

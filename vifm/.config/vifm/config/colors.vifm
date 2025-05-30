@@ -1,0 +1,6 @@
+" hi TopLine ctermbg=gray
+if $TERM == 'linux' || $TERM == 'xterm'
+  colorscheme Default
+else
+  colorscheme nord
+endif

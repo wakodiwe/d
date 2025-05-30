@@ -1,0 +1,9 @@
+let $HOME=expand($HOME)
+let $XDG_CACHE_HOME=expand("$XDG_CACHE_HOME")
+let $XDG_CONFIG_HOME=expand("$XDG_CONFIG_HOME")
+let $XDG_DATA_HOME=expand("$XDG_DATA_HOME")
+set trashdir="~/.local/share/Trash"
+set vifminfo=dhistory,chistory,state,tui,shistory,
+                \phistory,fhistory,dirstack,registers,
+                \bookmarks,bmarks
+

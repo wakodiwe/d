@@ -1,0 +1,357 @@
+"- 
+set viewcolumns=-80%{name},5%{mtime}
+set number
+set relativenumber
+set syscalls
+set history=100
+set undolevels=100
+set followlinks
+set sortnumbers
+set vimhelp
+set norunexec
+set trash
+set timeoutlen=200
+set timefmt='%d.%m.%Y %H:%M'
+set statusline=" %t | %s | %d | %A | %u:%g %T"
+" set statusline="%t %20s %-30d %a"
+
+set wildmenu
+set wildstyle=popup
+set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+set scrolloff=0
+
+"- GUI
+set tuioptions-=s
+set tuioptions+=u
+set tuioptions+=u
+set fillchars=vborder:\  
+set wildstyle=popup
+set suggestoptions=normal,visual,view,otherpane,delay,keys,registers,marks
+
+"- More settings
+" " hide side borders
+" set tuioptions-=s
+" if $TERM != 'linux'
+"     " use Unicode ellipsis
+"     set tuioptions+=u
+" endif
+" " change appearance of middle border
+" set fillchars=vborder:·
+" " use popup window instead of a single line for completion
+" set wildstyle=popup
+" " show suggestions
+" set suggestoptions=normal,visual,view,otherpane,delay,keys,registers,marks
+" " use vim as default editor, open multiple files in tabs
+" set vicmd='vim -p'
+" " use trash
+" set trash
+" " how many directories to store in all kinds of history
+" set history=1000
+" " allow partially entered external commands with unambiguous beginning using :!
+" set fastrun
+" " natural sort of (version) numbers within filenames
+" set sortnumbers
+" " maximum number of changes that can be undone.
+" set undolevels=1000
+" " use vim's documentation system for :help command
+" set vimhelp
+" " follow links on l or Enter automatically, not just navigate to target
+" set nofollowlinks
+" " allow automatic runing of executable files
+" set runexec
+" " format for displaying time
+" set timefmt=%y.%m.%d\ %H:%M
+" " show list of matches on tab complition in command-line mode
+" set wildmenu
+" " ignore case in search pattern unless it contains at least one uppercase letter
+" set ignorecase
+" set smartcase
+" " don't highlight search results automatically
+" set nohlsearch
+" " use increment searching and filtering (search/filter while typing)
+" set incsearch
+" " try to leave some space from cursor to upper/lower border in lists
+" set scrolloff=4
+" " completely disable compatibility with older versions:
+" " * make yy and dd ignore selection and work with file under the cursor;
+" " * make <c-i> (and <tab>) work in same way as in Vim (go forward in history).
+" set cpoptions-=fst
+" " don't wrap long lines in preview pane
+" set nowrap
+" " expand tabulation characters as two spaces
+" set tabstop=2
+" " hide .. directory everywhere
+" set dotdirs=
+" " custom ruler format
+" set rulerformat='%2l-%S%[ +%x%]'
+" " what should be saved automatically between vifm runs
+" set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,phistory,fhistory
+"            \,dirstack,registers,bookmarks,bmarks
+" " use trash directory per mount point, fallback to ~/.vifm/trash
+" set trashdir=%r/.vifm-Trash,$HOME/.vifm/trash
+" " update terminal title
+" set title
+" " always match characters on f/F/;/, in a case sensitive way
+" set caseoptions=G
+" " mount FUSE file-systems here
+" set fusehome=~/.vifm/.fuse
+" " ignore .git directory on :find
+" set findprg='find %s %a -print ,
+"             \ -type d \( ! -readable -o ! -executable -o -path "*/.git" \)
+"             \ -prune'
+
+" " ==============================================================================
+" " custom status line look
+
+" " don't display file user/group on Windows
+" if !has('win')
+"     let $RIGHTS = '%[%u:%g%]'
+" endif
+
+" if $VIFMRC_HAS_RICH_FONT
+"     let &statusline = ''
+"     if $SL_PREFIX != ''
+"         let &statusline = '%2*'.$SL_PREFIX.'%4*'
+"     endif
+"     let &statusline .= '%1*'           " left separator
+"     let &statusline .= ' %t '          " file name
+"     let &statusline .= ''             " left separator
+"     let &statusline .= '%='            " fill the whole status line
+"     let &statusline .= ''             " right separator
+"     let &statusline .= ' %A '          " file attributes
+"     let &statusline .= '%4*%2*'       " right separator
+"     let &statusline .= ' '.$RIGHTS.' ' " user and group owners of the file
+"     let &statusline .= '%3*%1*'       " right separator
+"     let &statusline .= ' %5E '         " human readable cumulative file size
+"     let &statusline .= '%4*%2*'       " right separator
+"     let &statusline .= ' %d '          " file modification date and time
+" else
+"     let &statusline = ' '
+"     if $SL_PREFIX != ''
+"         let &statusline .= $SL_PREFIX.'| '
+"     endif
+"     let &statusline .= '%t%= %A '.$RIGHTS.'%15E %20d '
+" endif
+
+" " ==============================================================================
+" " various mappings
+
+" " use < and > without ctrl-w prefix key in normal mode
+" nnoremap < <c-w><
+" nnoremap > <c-w>>
+
+" " shellout
+" nnoremap <silent> s :shell<cr>
+
+" " display sorting dialog
+" nnoremap <silent> S :sort<cr>
+
+" " toggle visibility of preview window
+" nnoremap <silent> w :view<cr>
+" vnoremap <silent> w :view<cr>gv
+
+" " moving cursor in another pane
+" nnoremap <silent> J <space>j<space>
+" nnoremap <silent> K <space>k<space>
+
+" " moving though sibling directories
+" nnoremap <c-j> ]R
+" nnoremap <c-k> [R
+
+" " open file in the background using its default program
+" nnoremap <silent> gb :file &<cr>l
+
+" " mappings for faster file renaming
+" " prepend to name
+" nnoremap I cw<c-a>
+" " replace file name stem
+" nnoremap cc cW<c-u>
+" " append to name
+" nnoremap A cw
+
+" " open vim to edit .vifmrc
+" nnoremap ,c :write | execute ':!%n${EDITOR:-vim} $MYVIFMRC' | restart<cr>
+" " open gvim to edit .vifmrc
+" nnoremap ,C :!gvim --remote-tab-silent $MYVIFMRC &<cr>
+
+" " toggle wrap setting on ,w key
+" nnoremap <silent> ,w :set invwrap<cr>
+
+" " faster search of files that start with a particular string
+" nnoremap f/ /^
+
+" " substitute in all files
+" nnoremap as :%s/
+
+" " force file editing rather than opening it
+" nnoremap E :edit<cr>
+
+" " use space and shift-tab as tab in quick view mode
+" qnoremap <space> <tab>
+" qnoremap <s-tab> <tab>
+
+" " toggle between sorting: by name <--> by size <--> by mtime
+" command! togglesort
+"          \ :if &sort == '-size,+name'
+"          \ |    set sort=+mtime
+"          \ |    echo 'Sorted by modification date'
+"          \ |elseif &sort == '+name'
+"          \ |    set sort=-size
+"          \ |    echo 'Sorted by size'
+"          \ |else
+"          \ |    set sort=+name
+"          \ |    echo 'Sorted by name'
+"          \ |endif
+" nnoremap <silent> ,S :togglesort<cr>
+
+" " ==============================================================================
+" " various commands
+
+" " makes a backup copy
+
+" " makes a detached signature (.asc)
+" command! sign gpg2 --armor --detach-sign %c
+
+" " creates directory and immediately enters it
+" command! mkcd :mkdir %a | cd %a
+" command! mkcd! :mkdir! %a | cd %a
+
+" " run make in current directory
+" command! make !!make %a
+
+" " use Vim to diff files
+" " uses selection of current pane when it contains more than one file
+" " otherwise uses left pane file and right pane file keeping order inside Vim
+" command! diff : if expand('%%c') == expand('%%f')
+"             \ |     if paneisat('right') && paneisat('bottom')
+"             \ |         execute '!vim -d %%C %%c'
+"             \ |     else
+"             \ |         execute '!vim -d %%c %%C'
+"             \ |     endif
+"             \ | else
+"             \ |     execute '!vim -d %%f'
+"             \ | endif
+
+" " ==============================================================================
+" " targeting Vim instances
+
+" " set target Vim server name
+" command! target : let $VIMARGS = '--servername "%a"'
+"                \| execute "!tmux %%i set-environment VIMARGS '".$VIMARGS."'"
+
+" " open file in existing instance of gvim (uses target)
+" if executable('run-gvim')
+"     " run-gvim can be a custom wrapper for gvim that does some extra work
+"     nnoremap <silent> o :    ![ -z "$(gvim --serverlist)" ] && run-gvim %f
+"                         \ || run-gvim --remote-tab-silent %f:p &<cr>
+" else
+"     nnoremap <silent> o :    ![ -z "$(gvim --serverlist)" ] && gvim $VIMARGS %f
+"                         \ || gvim $VIMARGS --remote-tab-silent %f:p &<cr>
+" endefault set of view columns
+" set viewcolumns=*{name}..,6{}.
+" set viewcolumns=*{name},{mtime},2{#},{#|}
+" set viewcolumns=*{name},{#|},6{}.
+
+" " brief information about files
+" nnoremap <silent> ,b :set viewcolumns=*{name}..,6{}.<cr>
+" " detailed information about files
+" nnoremap <silent> ,d :set viewcolumns=*{name}.,10{perms},12{uname},-7{gname},10{size}.,20{mtime}<cr>
+
+" " ==============================================================================
+" " tabs
+
+" " go to previous tab page or move current tab page to position specified by the
+" " count
+" nnoremap <silent> gT : <c-u>
+"                     \| if v:count == 0
+"                     \|     execute 'normal gT'
+"                     \| elseif v:count > tabpagenr('$')
+"                     \|     tabmove
+"                     \| elseif v:count >= tabpagenr()
+"                     \|     execute 'tabmove' v:count
+"                     \| elseif v:count < tabpagenr()
+"                     \|     execute 'tabmove' v:count - 1
+"                     \| endif
+"                     \| <cr>
+
+" " switch to the next tab page
+" nnoremap <c-n> gt
+" " switch to the previous tab page
+" nnoremap <c-p> gT
+
+" " ==============================================================================
+" " general bookmarks
+
+" mark b ~/bin/
+" mark c ~/.vifm/
+" mark h ~/
+" mark t ~/tmp/
+" mark V ~/.vim/pack/
+
+" " ==============================================================================
+" " filename filtering
+
+" " *.o - object files
+" " *.lo - object files for shared libs
+" " *.d - dependency file generated by compiler (also source file in D)
+" " *.class - JVM byte code
+" " *.pyc - Python byte code
+" " *.pyo - optimized Python byte code
+" " *.meta - magnet-link file for torrents
+" " .*~ - temporary files
+" " $RECYCLE.BIN - trash bin on Windows volumes
+" " CODE_OF_CONDUCT.md - crap in text form
+" filter! {*.lo,*.o,*.d,*.class,*.pyc,*.pyo,*.meta,.*~,$RECYCLE.BIN/,
+"         \CODE_OF_CONDUCT.md}
+
+" " ==============================================================================
+" " color scheme
+
+" colorscheme Default-256 near-default Default
+
+" " ==============================================================================
+" " "icons" for files
+
+" if $VIFMRC_HAS_RICH_FONT
+"     " file types
+"     set classify=' :dir:/, :exe:, :reg:, :link:'
+"     " various file names
+"     set classify+=' ::../::, ::*.sh::, ::*.[hc]pp,,*.cc,,*.hh::, ::*.[hc]::'
+"     set classify+=' ::/^copying|license$/::, ::.git/,,*.git/::/'
+"     set classify+=' ::*.epub,,*.fb2,,*.djvu::, ::*.pdf::'
+"     set classify+=' ::*.htm,,*.html,,**.[sx]html,,*.xml::'
+"     " archives
+"     set classify+=' ::*.7z,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,
+"                   \*.jar,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar,,*.taz,,
+"                   \*.tb2,,*.tbz,,*.tbz2,,*.tgz,,*.tlz,,*.trz,,*.txz,,*.tz,,
+"                   \*.tz2,,*.xz,,*.z,,*.zip,,*.zoo::'
+"     " images
+"     set classify+=' ::*.bmp,,*.gif,,*.jpeg,,*.jpg,,*.ico,,*.png,,*.ppm,,*.svg,,
+"                   \*.svgz,,*.tga,,*.tif,,*.tiff,,*.xbm,,*.xcf,,*.xpm,,*.xspf,,
+"                   \*.xwd::'
+"     " audio
+"     set classify+=' ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,
+"                   \*.mid,,*.midi,,*.mp3,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.ra,,
+"                   \*.ram,,*.rm,,*.spx,,*.wav,,*.wma,,*.ac3::'
+"     " media
+"     set classify+=' ::*.avi,,*.ts,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,
+"                   \*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,
+"                   \*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid,,*.webm::'
+"     " office files
+"     set classify+=' ::*.doc,,*.docx::, ::*.xls,,*.xls[mx]::'
+"     set classify+=' ::*.pptx,,*.ppt::'
+" endif
+
+" " ==============================================================================
+" " load machine specific local set of settings
+
+" source $VIFM/vifmrc_local
+
+" " ==============================================================================
+
+
+

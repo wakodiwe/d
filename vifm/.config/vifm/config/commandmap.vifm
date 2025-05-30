@@ -1,0 +1,126 @@
+"- Commands
+"-- These are some of the macros that can be used in the action part:
+" %a for user arguments
+" %c for current file under the cursor
+" %C for current file under the cursor of inactive pane
+" %f for selected file(s)
+" %F for selected file(s) of inactive pane
+" %b is the same as %f %F
+" %d for current directory name
+" %D for current directory name of inactive pane
+" %r{x} for list of files in register {x}
+" %m runs the command in a menu window
+" %u uses command's output to build a file list
+" see `:help vifm-macros` and `:help vifm-filename-modifiers` for more
+"-- commands
+command! df df -h %m 2> /dev/null
+command! diff vim -d %f %F
+command! zip zip -r %c.zip %f
+command! run !! ./%f
+command! make !!make %a
+command! mkcd :mkdir %a | cd %a
+command! vgrep vim "+grep %a"
+command! reload :write | restart full
+command! bak :clone %c.bak
+command! bak :clone %c.bak
+command! untar :!tar -xzf %c
+command! unzip :!unzip %c
+command! gunzip :!gunzip %c
+command! mdot :!cd ~/dotfiles && make
+
+"-- FZF for vifm
+" https://wiki.vifm.info/index.php/How_to_integrate_fzf_for_fuzzy_finding
+
+" command! FZFlocate : set noquickview
+"                   \| let $FZF_PICK = term('locate $HOME | fzf --height 10 2>/dev/tty')
+"                   \| if $FZF_PICK != ''
+"                   \|     execute 'goto' fnameescape($FZF_PICK)
+"                   \| endif
+
+command! FZFfind : set noquickview
+                \| let $FZF_PICK = term('find | fzf --height 30 2>/dev/tty')
+                \| if $FZF_PICK != ''
+                \|     execute 'goto' fnameescape($FZF_PICK)
+                \| endif
+nnoremap ,ff :FZFfind<cr>
+
+
+"- Key mappings
+"-- Go to directories
+
+nnoremap fhb :cd $HOME/bin/<cr>
+nnoremap fhd :cd $DEVELOPMENT_HOME<cr>
+nnoremap fhh :cd $HOME<cr>
+nnoremap fht :cd $HOME/tmp<cr>
+
+nnoremap fcc :cd $XDG_CONFIG_HOME<cr>
+nnoremap fcv :cd $XDG_CONFIG_HOME/vim/<cr>
+
+nnoremap fdd :cd ~/gits/dotfiles<cr>
+nnoremap fdv :cd $DOTSDIR/vim/.config/vim<cr>
+
+nnoremap fle :cd $HOME/.local/etc<cr>
+nnoremap fll :cd $HOME/.local<cr>
+nnoremap flb :cd $HOME/.local/bin<cr>
+nnoremap flg :cd $GITS<cr>
+nnoremap flp :cd $HOME/.local/python<cr>
+nnoremap flS :cd $HOME/.local/src<cr>
+nnoremap fls :cd $XDG_DATA_HOME<cr>
+
+nnoremap ft  :cd $XDG_DATA_HOME/Trash/<cr>
+
+nnoremap fru  :cd /usr<cr>
+
+nnoremap H   :histprev<cr>
+nnoremap L   :histnext<cr>
+
+
+cnoremap <C-j> <cr>
+nnoremap <C-j> <cr>
+
+"-- cd to command
+nnoremap cd :cd<space>
+
+"-- Redo
+nnoremap U <C-R>
+
+"-- Toggle view
+nnoremap <C-v> :view<cr>
+
+"-- Mark downwards
+nnoremap <space> tj
+
+"-- Rename with / without extension
+nnoremap a cW
+nnoremap A cw
+
+"--  chmod +x
+nnoremap x :chmod<cr>
+
+"-- Up / down
+nnoremap j jzz
+nnoremap k kzz
+
+"-- Up / down 5 lines
+nnoremap J 5jzz
+nnoremap K 5kzz
+
+"-- Create file / directory
+nnoremap m :touch<space>
+nnoremap M :!mkdir -p<space>
+
+"-- Open shell
+nnoremap S :shell<cr>
+
+"-- Quit vifm
+" Leave without changing shell working directory
+" nnoremap qq :q<cr>
+nnoremap qq :q<cr>
+" Leave with changing shell working directory
+" nnoremap qd :q<cr>
+
+"-- Reload vifm config
+nnoremap ,r :reload<cr>
+
+"-- Show sort dialog
+nnoremap s :sort<cr>

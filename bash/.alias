@@ -1,0 +1,39 @@
+# ~/.alias
+
+
+alias ..="cd .."
+alias ...="cd ..; cd .."
+
+alias so="source ~/.bashrc"
+
+alias e="exit"
+
+alias ll="ls -lAh"
+
+# TODO Delete when C-l works
+alias c="clear" 
+
+alias mount="sudo mount"
+alias umount="sudo umount"
+
+alias cfdisk="sudo cfdisk"
+alias sfdisk="sudo cfdisk"
+
+alias mkfs.vfat="sudo mkfs.vfat"
+alias mkfs.ext4="sudo mkfs.ext4"
+
+alias loc="sudo locate"
+alias locate="loc"
+alias udb="sudo updatedb"
+alias updatedb="udb"
+
+alias xbps-install="sudo xbps-install"
+alias xbps-remove="sudo xbps-remove"
+alias xbps-reconfigure="sudo xbps-reconfigure"
+
+alias less="less -FSRXc"
+alias w3m="w3m duckduckgo.de"
+
+alias reboot="sudo reboot"
+alias shutdown="sudo shutdown -P now"
+

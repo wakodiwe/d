@@ -1,0 +1,63 @@
+# ~/.inputrc
+
+$include /etc/inputrc
+
+set bell-style none
+
+set completion-ignore-case on
+set menu-complete-display-prefix on
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+
+set echo-control-characters off
+set keyseq-timeout 1
+
+set menu-complete-display-prefix on
+
+set editing-mode vim
+
+  set vi-ins-mode-string \1\e[5 q\2
+  set vi-cmd-mode-string \1\e[2 q\2
+$if mode=vi
+  #set show-mode-in-prompt on
+
+  "\t": menu-complete
+  "\e[Z": menu-complete-backward
+  "\C-l": clear-screen
+
+   set keymap vi-command
+  "k": history-search-backward
+   "j": history-search-forward
+$endif
+
+  # python
+  # python:bind -v
+  # python:bind ^I rl_complete
+
+# set bell-style none
+
+# set echo-control-characters off
+# 
+# set show-all-if-unmodified on
+# 
+# set colored-stats on
+# set visible-stats on
+# set mark-symlinked-directories on
+# set colored-completion-prefix 0
+# set menu-complete-display-prefix on
+# 
+# set keyseq-timeout 1
+# 
+# set editing-mode vi
+# set show-mode-in-prompt on
+# set vi-ins-mode-string \1\e[5 q\2
+# set vi-cmd-mode-string \1\e[2 q\2
+# 
+# # TODO Not working? cmdmod yes. input mode no.
+# set keymap vi-command
+# \C-l: clear-screen
+# 
+# \t:   menu-complete
+# j:		history-search-forward
+# k:		history-search-backward
+# 
