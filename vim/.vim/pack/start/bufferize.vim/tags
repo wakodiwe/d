@@ -1,0 +1,15 @@
+:Bufferize	doc/bufferize.txt	/*:Bufferize*
+:BufferizeSystem	doc/bufferize.txt	/*:BufferizeSystem*
+:BufferizeTimer	doc/bufferize.txt	/*:BufferizeTimer*
+b:bufferize_source_command	doc/bufferize.txt	/*b:bufferize_source_command*
+bufferize	doc/bufferize.txt	/*bufferize*
+bufferize-contents	doc/bufferize.txt	/*bufferize-contents*
+bufferize-installation	doc/bufferize.txt	/*bufferize-installation*
+bufferize-issues	doc/bufferize.txt	/*bufferize-issues*
+bufferize-settings	doc/bufferize.txt	/*bufferize-settings*
+bufferize-usage	doc/bufferize.txt	/*bufferize-usage*
+bufferize.txt	doc/bufferize.txt	/*bufferize.txt*
+g:bufferize_command	doc/bufferize.txt	/*g:bufferize_command*
+g:bufferize_focus_output	doc/bufferize.txt	/*g:bufferize_focus_output*
+g:bufferize_keep_buffers	doc/bufferize.txt	/*g:bufferize_keep_buffers*
+help-tags	tags	1

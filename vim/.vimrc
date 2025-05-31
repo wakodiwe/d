@@ -4,6 +4,50 @@ vim9script
 # \ \ / / | '_ ` _ \| '__/ __|
 #  \ V /| | | | | | | | | (__
 #   \_/ |_|_| |_| |_|_|  \___|
+#
+#
+# - ? NrrRgn
+# git clone --depth=1 git@github.com:chrisbra/NrrRgn.git
+# - ? vim-bbye
+# git clone --depth=1 git@github.com:moll/vim-bbye.git
+# - colorizer
+# git clone --depth=1 git@github.com:lilydwjg/colorizer.git
+# - vim-colortemplate
+# git clone --depth=1 git@github.com:lifepillar/vim-colortemplate.git
+
+# - ALE
+# git clone --depth=1 git@github.com:dense-analysis/ale.git
+# - vim-bufftabline
+# git clone --depth=1 git@github.com:ap/vim-buftabline.git
+# - # vim-commentary
+# git clone --depth=1 git@github.com:tpope/vim-commentary.git
+# - direnv.vim
+# git clone --depth=1 git@github.com:direnv/direnv.vim.git
+# - vim-easymotion
+# git clone --depth=1 git@github.com:easymotion/vim-easymotion.git
+# - vim-eunuch
+# git clone --depth=1 git@github.com:tpope/vim-eunuch.git
+# - # vim-extended-ft
+# git clone --depth=1 git@github.com:svermeulen/vim-extended-ft.git
+# - vim-maximizer
+# git clone --depth=1 git@github.com:szw/vim-maximizer.git
+# - nordtheme/vim -> nord.vim
+# git clone --depth=1 git@github.com:nordtheme/vim.git nord.vim
+# - vim-obsession
+# git clone --depth=1 git@github.com:tpope/vim-obsession.git
+# - onehalf
+# git clone --depth=1 git@github.com:sonph/onehalf.git
+# - vim-scriptease
+# git clone --depth=1 git@github.com:tpope/vim-scriptease.git
+# - supertab
+# git clone --depth=1 git@github.com:ervandew/supertab.git
+# - vim-symlink
+# git clone --depth=1 git@github.com:aymericbeaumet/vim-symlink.git
+# - tabular
+# git clone --depth=1 git@github.com:godlygeek/tabular.git
+# - vifm.vim
+# git clone --depth=1 git@github.com:vifm/vifm.vim.git
+
 
 set nocompatible
 filetype plugin indent on
