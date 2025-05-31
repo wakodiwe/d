@@ -1,4 +1,4 @@
 " ftplugin/bash.vim
-vim9script
 
-abbrev bbj #!/usr/env bash
+let g:sh_fold_enabled=5
+setl foldmethod=syntax

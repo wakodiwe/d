@@ -12,19 +12,21 @@ usage() {
 }
 
 msg() {
-				if [ "${1}" ]; then
-								printf "%s\n" "${1}" 
-								[ ${2} = "1" ] && usage
-				fi
+	if [ "${1}" ]; then
+		printf "%s\n" "${1}" 
+		[ ${2} = "1" ] && usage
+	fi
 }
-
-[ "$(id -u)" != 0 ] && usage
+id -u
+exit
+[ "$(id -u)" != 0 ] msg "Do $scriptname +|-" 1
 
 # CACHEFILEPATH
 # Set cachefilepath to XDG_DATA_HOME if set
 # else to HOME
 cachefilepath="${XDG_DATA_HOME:-$HOME}"
 echo $cachefilepath
+
 # Set filename for cachefile.
 # prefix it with a . (dot) when in $HOME
 cachefilename="tty-magnify"

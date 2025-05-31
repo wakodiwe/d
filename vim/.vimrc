@@ -10,18 +10,21 @@ filetype plugin indent on
 syntax on
 
 set foldenable
-set foldmethod=syntax
+set foldmethod=marker
+
 
 set noswapfile
 
+set autochdir
 set hidden
-set smartindent
-set tabstop=2 
 set number
 set relativenumber
+set smartindent
+set tabstop=2 
 
 set hlsearch
 set incsearch
+
 set foldmethod=syntax
 
 set t_Co=256
