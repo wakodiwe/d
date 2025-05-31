@@ -4,6 +4,8 @@
 
 export PATH="$PATH:~/bin:~/.local/bin"
 
+export HISTFILE=~/.local/share/history/bash.hst
+
 export XDG_CONFIG_HOME=~/.config
 export XDG_DATA_HOME=~/.local/share
 
