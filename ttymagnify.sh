@@ -24,7 +24,7 @@ msg() {
 # Set cachefilepath to XDG_DATA_HOME if set
 # else to HOME
 cachefilepath="${XDG_DATA_HOME:-$HOME}"
-
+echo $cachefilepath
 # Set filename for cachefile.
 # prefix it with a . (dot) when in $HOME
 cachefilename="tty-magnify"

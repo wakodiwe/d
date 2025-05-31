@@ -1,7 +1,11 @@
 #- ~/.profile
 
 # . ~/.environment
+
+export PATH="$PATH:~/bin:~/.local/bin"
+
 export XDG_CONFIG_HOME=~/.config
+export XDG_DATA_HOME=~/.local/share
 
 export LC_ALL=de_DE.UTF-8
 export LANG=de_DE.UTF-8

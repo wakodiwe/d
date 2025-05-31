@@ -88,4 +88,3 @@ PS1="\w > "
 # 	fi
 # 	cd "$dst"
 # }
-PATH="$PATH:/home/zfen/bin"
