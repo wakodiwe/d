@@ -4,15 +4,60 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-bspc config border_width         2
-bspc config window_gap          12
-
-bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
+bspc config split_ratio   0.7
+bspc config top_padding   0
+bspc config top_monocle_padding 0
+
+bspc config border_width 1
+bspc config window_gap -1
+for side in top right bottom left ; do
+	bspc config ${side}_padding 1
+done
+
+
+# split_ratio
+# window_gap
+# right_padding
+# bottom_padding
+# left_padding
+# top_monocle_padding
+# right_monocle_padding
+# bottom_monocle_padding
+# left_monocle_padding
+# border_width
+# normal_border_color
+# focused_border_color
+# active_border_color
+# borderless_monocle
+# automatic_scheme
+# gapless_monocle
+# single_monocle
+# click_to_focus
+# focus_follows_pointer
+# center_pseudo_tiled
+# directional_focus_tightness
+# external_rules_command
+# honor_size_hints
+# merge_overlapping_monitors
+# initial_polarity
+# mapping_events_count
+# presel_feedback
+# presel_feedback_color
+# removal_adjustment
+# remove_disabled_monitors
+# remove_unplugged_monitors
+# status_prefix
+# swallow_first_click
+# ignore_ewmh_focus
+# ignore_ewmh_fullscreen
+# ignore_ewmh_struts
+# pointer_action1
+# pointer_action2
+# pointer_action3
+# pointer_follows_focus
+# pointer_follows_monitor
+# pointer_modifier
+# pointer_motion_interval

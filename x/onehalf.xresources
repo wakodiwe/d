@@ -1,0 +1,76 @@
+! Onehalf Colorscheme
+! Based on https://github.com/sonph/onehalf
+! By https://github.com/dbinary
+
+! #define light
+! #define dark
+
+#if defined(dark)
+#define base00 #282c34
+#define base01 #353b45
+#define base02 #3e4451
+#define base03 #545862
+#define base04 #565c64
+#define base05 #abb2bf
+#define base06 #b6bdca
+#define base07 #c8ccd4
+#define base08 #e06c75
+#define base09 #d19a66
+#define base0A #e5c07b
+#define base0B #98c379
+#define base0C #56b6c2
+#define base0D #61afef
+#define base0E #c678dd
+#define base0F #be5046
+
+*foreground:   base05
+*background:   base00
+*cursorColor: base05
+
+! dmenu.foreground:  base00
+! dmenu.background:  base09
+dmenu.selforeground: base03
+dmenu.selbackground: base0D
+
+#elif defined(light)
+
+#define base00 #82c34
+#define base01 #53b45
+#define base02 #e4451
+#define base03 #45862
+#define base04 #65c64
+#define base05 #bb2bf
+#define base06 #6bdca
+#define base07 #8ccd4
+#define base08 #06c75
+#define base09 #19a66
+#define base0A #5c07b
+#define base0B #8c379
+#define base0C #6b6c2
+#define base0D #1afef
+#define base0E #678dd
+#define base0F #e5046
+
+
+*foreground:  base00
+*background:  base05
+*cursorColor: base09
+
+#endif
+
+*color0:  base00
+*color1:  base08
+*color2:  base0B
+*color3:  base0A
+*color4:  base0D
+*color5:  base0E
+*color6:  base0C
+*color7:  base05
+*color8:  base03
+*color9:  base09
+*color10: base01
+*color11: base02
+*color12: base04
+*color13: base06
+*color14: base0F
+*color15: base07

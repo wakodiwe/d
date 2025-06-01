@@ -3,37 +3,7 @@ source ~/.config/vifm/config/settings.vifm
 source ~/.config/vifm/config/colors.vifm
 source ~/.config/vifm/config/commandmap.vifm
 " source ~/.config/vifm/plugins/devicons.vifm
-fileviewer *.pdf
-  \ vifmimg pdf %px %py %pw %ph %c
-  \ %pc
-  \ vifmimg clear
-
-fileviewer *.djvu
-  \ vifmimg djvu %px %py %pw %ph %c
-  \ %pc
-  \ vifmimg clear
-
-fileviewer *.epub
-  \ vifmimg epub %px %py %pw %ph %c
-  \ %pc
-  \ vifmimg clear
-
-fileviewer <video/*>
-  \ vifmimg video %px %py %pw %ph %c
-  \ %pc
-  \ vifmimg clear
-
-fileviewer <image/*>
-  \ vifmimg draw %px %py %pw %ph %c
-  \ %pc
-  \ vifmimg clear
-
-fileviewer <audio/*>
-  \ vifmimg audio %px %py %pw %ph %c
-  \ %pc
-  \ vifmimg clear
-
-fileviewer <font/*>
-  \ vifmimg font %px %py %pw %ph %c
-  \ %pc
-  \ vifmimg clear
+"
+filetype *.jpg,*.jpeg,*.png,*.gif
+  \ {View in feh}
+  \ feh -FZ %d --start-at %d/%c 2>/dev/null

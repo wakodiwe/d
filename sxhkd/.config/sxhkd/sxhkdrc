@@ -1,10 +1,13 @@
 #
 # wm independent hotkeys
 #
-
 # terminal emulator
 super + Return
-	xterm
+	st
+
+# Browser
+super + Q
+	qutebrowser
 
 # program launcher
 super + @space
