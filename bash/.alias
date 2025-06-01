@@ -25,6 +25,8 @@ alias sfdisk="sudo cfdisk"
 alias mkfs.vfat="sudo mkfs.vfat"
 alias mkfs.ext4="sudo mkfs.ext4"
 
+alias sv="sudo sv"
+
 alias loc="sudo locate"
 alias locate="loc"
 alias udb="sudo updatedb"
