@@ -14,7 +14,7 @@ alias gcm="git commit -m"
 alias gl="git log"
 alias gp="git push"
 alias gs="git status"
-alias gacmp="git add .; git commit -m "Update"; git push; printf "%s\n" "> Status:"; git status"
+alias gacmp="git add .; git commit -m "Update"; git push; printf '%s\n' '> Status:'; git status"
 
 alias mount="sudo mount"
 alias umount="sudo umount"
