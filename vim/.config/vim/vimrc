@@ -3,7 +3,7 @@ vim9script
 #  \ \ / / | '_ ` _ \| '__/ __|
 #   \ V /| | | | | | | | | (__
 #    \_/ |_|_| |_| |_|_|  \___|
-# 
+#
 
 # !!! Create ~/.local/share/vim/session folder
 # !!! Create ~/.local/share/vim/session folder
@@ -21,13 +21,12 @@ set viminfo=%,<800,'10,/50,:100,h,f0,n$XDG_DATA_HOME/vim/viminfo
 g:netrw_home = "$XDG_DATA_HOME/vim"
 g:netrw_dirhistmax = 0
 
+g:fzf_vim = {}
+g:fzf_vim.preview_window = ['right,50%', 'ctrl-/']
+
+nmap <leader>R :%s/\s\+$//e<cr>
+
 # ### Clientserver
 # if v:servername != $VIMFRID && !empty($DISPLAY)
 #   :call remote_startserver($VIMFRID)
 # endif
-
-# source ~/.config/vim/plugin/cursor.vim
-# source ~/.config/vim/plugin/setting.vim
-# source ~/.config/vim/plugin/mapping.vim
-# source ~/.config/vim/plugin/status.vim
-# source ~/.config/vim/plugin/color.vim

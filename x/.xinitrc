@@ -25,9 +25,9 @@ pgrep -x sxhkd > /dev/null || \
 
 # pulseaudio --start
 
-nm-applet &
-blueman-applet &
-statusbar &
+# nm-applet &
+# blueman-applet &
+# statusbar &
 
 st &
 bspwm

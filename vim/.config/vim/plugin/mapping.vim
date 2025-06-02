@@ -8,7 +8,8 @@ nnoremap <leader>S
 
 nnoremap U <C-R>
 
-nnoremap <leader>ff :FZF ~/<cr>
+nnoremap <leader>fff :Files ~/<cr>
+nnoremap <leader>ffd :Files ~/dotfiles/<cr>
 
 nnoremap <esc><esc> :silent! nohls<cr>
 

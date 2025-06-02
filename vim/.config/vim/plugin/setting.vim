@@ -4,6 +4,7 @@ syntax on
 set encoding=utf-8
 
 " set number
+set number
 set relativenumber
 set numberwidth=4
 set cursorline
@@ -13,7 +14,7 @@ set linebreak
 set nowrap
 set list
 set listchars=tab:»\ ,trail:·,extends:>,precedes:«,nbsp:+
-set fillchars+=eob:\ ,fold:\ ,vert:\ 
+set fillchars+=eob:\ ,fold:\ ,vert:\
 
 set incsearch
 set ignorecase
@@ -54,7 +55,7 @@ set noswapfile
 set nowb
 set undofile
 
-set backspace=indent,eol,start 
+set backspace=indent,eol,start
 set ttimeout
 set ttimeoutlen=0
 set shortmess+=I

@@ -13,7 +13,7 @@ dzen2.font: SauceCodePro Nerd Font Mono,SauceCodePro NFM Light:style:Light:pixel
 ! - st terminal
 st.termname: st-256color
 st.borderpx: 2
-st.disablebold: 0
+st.disablebold: 1
 st.disableitalic: 0
 st.cwscale: 1.2
 st.chscale: 1.0
