@@ -1,8 +1,8 @@
 # sxhkdrc
 #
 # terminal emulator
-super + Return
-	st
+super + Return; {h,j,k,l}
+  bspc node -p {west 0.4,south 0.7,north 0.4,east 0.6}; st
 
 # Browser
 super + Q
@@ -43,10 +43,6 @@ super + {m,f}
 # 	bspc node -s biggest.window
 
 # state/flags
-
-# set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
